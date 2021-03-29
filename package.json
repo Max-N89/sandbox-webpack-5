@@ -3,7 +3,9 @@
   "description": "A sandbox for implementing examples from webpack 5 guides.",
   "private": true,
   "scripts": {
-    "prod-build": "webpack --mode=production"
+    "watch": "webpack --watch",
+    "dev": "webpack serve --open",
+    "express": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,12 +20,15 @@
   "devDependencies": {
     "css-loader": "^5.2.0",
     "csv-loader": "^3.0.3",
+    "express": "^4.17.1",
     "html-webpack-plugin": "^5.3.1",
     "json5": "^2.2.0",
     "style-loader": "^2.0.0",
     "toml": "^3.0.0",
     "webpack": "^5.27.2",
     "webpack-cli": "^4.5.0",
+    "webpack-dev-middleware": "^3.7.3",
+    "webpack-dev-server": "^3.11.2",
     "xml-loader": "^1.2.1",
     "yamljs": "^0.3.0"
   },

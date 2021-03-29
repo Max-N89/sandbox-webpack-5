@@ -1,7 +1,12 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+const config = {
+    mode: "development",
+    devtool: "eval-source-map",
+    devServer: {
+        contentBase: "./dist"
+    },
     entry: {
         index: "./src/index.js",
         customAlert: "./src/customAlert.js"
@@ -9,6 +14,7 @@ module.exports = {
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, "./dist"),
+        publicPath: "/",
         clean: true
     },
     plugins: [
@@ -18,3 +24,19 @@ module.exports = {
         })
     ]
 };
+
+module.exports = config;
+
+/*
+
+module.exports = function (env, argv) {
+    if (!argv.mode) {
+        config.mode = "development";
+    }
+    if (argv.mode === "development") {
+        config.devtool = "eval-source-map";
+    }
+    return config;
+};
+
+*/
